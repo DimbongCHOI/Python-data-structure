@@ -11,16 +11,20 @@ for i in range(len(list3)): # -> O(n^2)..  기준 부적격
             list3[j + 1] = tmp
 
 print("Input:")
+
 print("list1:", end =" ")
 for i in range(len(list1)):
     print(list1[i], end = ' -> ')
 print("끝")
+
 print("list2:", end =" ")
 for i in range(len(list2)):
     print(list2[i], end = ' -> ')
 print("끝")
 
+# 최종 출력
 print("Output:")
+
 for i in range(len(list3)):
     print(list3[i], end = ' -> ')
 print("끝")
