@@ -4,7 +4,6 @@ list2 = [4, 6, 15, 26, 33]
 list3 = []
 
 i, j = 0, 0
-
 # 두 리스트를 순차적으로 비교하며 병합
 while(i < len(list1) and j < len(list2)):
     if(list1[i] < list2[j]):
