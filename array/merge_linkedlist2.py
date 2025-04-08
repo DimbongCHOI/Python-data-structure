@@ -40,11 +40,6 @@ list2.append(15)
 list2.append(26)
 list2.append(33)
 
-# 입력값 출력
-print("Input:")
-list1.printList()
-list2.printList()
-
 cur1 = LinkedList()
 cur2 = LinkedList()
 cur1 = list1.head
@@ -65,6 +60,11 @@ while(cur1):
 while(cur2):
     list3.append(cur2.data)
     cur2 = cur2.link
+
+# 입력값 출력
+print("Input:")
+list1.printList()
+list2.printList()
 
 # 최종 출력
 print("Output:")
