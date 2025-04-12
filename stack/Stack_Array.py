@@ -33,4 +33,3 @@ class Stack:
         self.stack[self.top] = None # None 으로 죽여버리기, 아예 없어지는 건 아님
         self.top -= 1 # top 인덱스 값 - 1 .. 1층 낮아짐
         return data # data 궁금하면 봐 ㅋ
-
