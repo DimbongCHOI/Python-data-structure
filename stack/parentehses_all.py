@@ -50,7 +50,6 @@ def checkAllParentheses(val):
 
     return checkStack.isStackEmpty()
 
-
 n = input("판별할 값 입력: ")
 result = checkAllParentheses(n)
 print("Ok" if result else "Error")
