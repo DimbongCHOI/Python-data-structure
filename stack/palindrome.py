@@ -1,4 +1,4 @@
-# check - palindrome
+# check - palindrome 
 class Stack:
     def __init__(self, size): # 선언 시, size는 최대 크기를 받아옴
         if not isinstance(size, int):
@@ -34,44 +34,29 @@ class Stack:
         self.top -= 1 # top 인덱스 값 - 1 .. 1층 낮아짐
         return data # data 궁금하면 봐 ㅋ
 
-def isPalindrome(val): # ver1 : Quiz - G : 앞 뒤로 읽어도 같은 값
-        pal = Stack(len(val) // 2)
-        isTrue = True
-        i = 0
+def isPalindrome(val): # ver2 : 길이 개선 및 논리 개선 with GPT
+    pal = Stack(len(val) // 2)
+    isTrue = True
+    i = 0
 
-        if(len(val) // 2 == len(val) / 2): # 짝수
-            for _ in range(len(val) // 2):
-                pal.push(val[i])
-                i += 1
-                # pal.printStack()
-            for _ in range(len(val) // 2):
-                n = pal.pop()
-                # print("pop값", n)
-                # print("val값", val[i])
-                if(n == val[i]):
-                    isTrue = True
-                    i += 1
-                else:
-                    isTrue = False
-                    break
-        else: # 홀수
-            for _ in range(len(val) // 2):
-                pal.push(val[i])
-                i += 1
-                # pal.printStack()
-            for _ in range(len(val) // 2):
-                n = pal.pop()
-                # print("pop값", n)
-                # print("val값", val[i])
-                if(n == val[i + 1]):
-                    isTrue = True
-                    i += 1
-                else:
-                    isTrue = False
-                    break
+    for _ in range(len(val) // 2): # push 부분
+        pal.push(val[i])
+        i += 1
 
-        return isTrue
+    # 홀수면 가운데 문자 하나 건너뜀
+    if(len(val) % 2) == 1: # 홀수 처리 부분
+        i += 1
 
-val = input("판별할 값 입력: ")
-result = isPalindrome(val)
-print(result)
+    while(not pal.isStackEmpty()): # pal(stack)이 비지 않은 동안 반복
+        n = pal.pop()
+        if(n != val[i]):
+            isTrue = False
+            break
+        i += 1
+
+    return isTrue
+
+# 실행
+n = input("판별할 값 입력: ")
+result = isPalindrome(n)
+print("우영우" if result else "not 우영우")
