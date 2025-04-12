@@ -1,4 +1,4 @@
-# check - palindrome 
+# check - palindrome
 class Stack:
     def __init__(self, size): # 선언 시, size는 최대 크기를 받아옴
         if not isinstance(size, int):
